@@ -1,7 +1,7 @@
 # LPS_extraction
 ============================================
 
-The script is wo extract log-power-spectrum (LPS) for speech enhancement and bandwidth extension.
+The script is to extract log-power-spectrum (LPS) for speech enhancement and bandwidth extension.
 
 ### Requirements
 
