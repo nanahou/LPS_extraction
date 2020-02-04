@@ -7,8 +7,7 @@
 
 
 '''
-    This file is for extracting power_d, dynamic_c, and dynamic_d and then computing cmvn using own data set
-    not all because there is no big difference.
+    This file is for extracting log-power-spectrum.
 '''
 import numpy as np
 import torch
@@ -16,9 +15,6 @@ import pickle
 import time
 import os
 import sys
-sys.path.append('/home/hounana/pytorch/enhancement/')
-from scripts.comput_feature import *
-from scripts.cmvn import comp_cmvn4tensor_varylen
 from scripts.audioread import audioread
 from scripts.normhamming import normhamming
 from scripts.plot_spectrum import *
@@ -40,13 +36,15 @@ def main():
 
     thred = -4
     fft_len_16k, frame_shift_16k = 512, 256
-    data_path_16k = '/data/disk3/hounana/Valentini-Botinhao_1s/16k/clean_testset_wav_1s/'
-    LPS_path_16k = '/data/disk3/hounana/Valentini-Botinhao_1s/LPS/clean_testset_wav_1s_LPS_16k/'
-
-    for dir in [LPS_path_16k, LPS_path_8k, cmvn_path_16k, cmvn_path_8k]:
+    data_path_16k = './data/wav/'
+    LPS_path_16k = './data/LPS/'
+    
+    #create the output directory
+    for dir in [LPS_path_16k]:
         if not os.path.exists(dir):
             os.makedirs(dir)
-
+    
+    #scan all the wav data under the path
     data_list = [x for x in os.listdir(data_path_16k) if x.endswith(".wav")]
     # data_list = data_list[0:5]
 
@@ -59,8 +57,11 @@ def main():
         power_16k = get_power_spec(item_16k, fft_len_16k, frame_shift_16k)
         power_16k = torch.from_numpy(power_16k.astype(np.float)).float()
         
+        # convert to log space
         log_16k = torch.log(power_16k)
         # print(log_16k.size())
+        
+        #save the feature into .pkl file
         with open(file_lps_16k, 'wb') as out_dynamic_c:
             pickle.dump(log_16k, out_dynamic_c, True)
       
