@@ -3,8 +3,6 @@
 
 The script is wo extract log-power-spectrum (LPS) for speech enhancement and bandwidth extension.
 
-## Installation
-
 ### Requirements
 
 The model is implemented in Tensorflow and Keras and uses several additional libraries. Specifically, we used:
@@ -32,7 +30,7 @@ The repository is structured as follows.
 * `extract_LPS.py`: the main scripts to extract features
 * `normhamming.py`: the function to apply a normalized square root hamming periodic window 
 * `plot_spectrum.py`: the function to plot the LPS features
-* `sigproc.py`: including the functions to frame signals, deframe signals...
+* `sigproc.py`: including the functions to frame signals, deframe signals from [2]
 
 ### Usage
 
@@ -43,4 +41,5 @@ If plotting your features, you only need to call the function in `plot_spectrum.
 
 ```
 [1]. Valentini-Botinhao, C., Wang, X., Takaki, S. and Yamagishi, J., 2016. Speech Enhancement for a Noise-Robust Text-to-Speech Synthesis System Using Deep Recurrent Neural Networks. In Interspeech (pp. 352-356).
+[2]. https://github.com/jameslyons/python_speech_features/blob/master/python_speech_features/sigproc.py
 ```
