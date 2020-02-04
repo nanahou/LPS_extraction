@@ -7,7 +7,6 @@
 
 
 import scipy.io.wavfile as wav
-import librosa
 import numpy as np
 
 
@@ -23,9 +22,4 @@ def audioread(filename):
     
     max_nb_bit = float(2 ** (nb_bits - 1))
     sig = sig / (max_nb_bit + 1.0)
-    # nb_bits =1
-
-    # sig, rate = librosa.load(filename, None, mono=True, offset=0.0, dtype=np.float32)
-    # print('just read:', sig)
-    # nb_bits = 1
     return rate, sig, nb_bits
