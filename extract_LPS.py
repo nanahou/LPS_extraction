@@ -30,7 +30,7 @@ def get_power_spec(filename, fft_len, frame_shift):
     power_spec =  np.absolute(power_spec)
     return power_spec
 
-# ---------------------extract training 8k, 16k pairs files -------------------------------
+
 def main():
     t_start = time.time()
 
@@ -46,7 +46,6 @@ def main():
     
     #scan all the wav data under the path
     data_list = [x for x in os.listdir(data_path_16k) if x.endswith(".wav")]
-    # data_list = data_list[0:5]
 
     count = 1.0
     for item in data_list:
