@@ -34,11 +34,11 @@ The repository is structured as follows.
 
 ### Usage
 
-If extracting LPS features, you only need to replace the path in `extract_LPS.py` with your own data path and run: 
+* If extracting LPS features, you only need to replace the path in `extract_LPS.py` with your own data path and run: 
 
-```python extract_LPS.py```
+  ```python extract_LPS.py```
 
-If plotting your features, you only need to call the function in `plot_spectrum.py`.
+* If plotting your features, you only need to call the function in `plot_spectrum.py`.
 
 ```
 [1]. Valentini-Botinhao, C., Wang, X., Takaki, S. and Yamagishi, J., 2016. Speech Enhancement for a Noise-Robust Text-to-Speech Synthesis System Using Deep Recurrent Neural Networks. In Interspeech (pp. 352-356).
