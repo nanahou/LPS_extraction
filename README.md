@@ -5,7 +5,7 @@ The script is to extract log-power-spectrum (LPS) for speech enhancement and ban
 
 ### Requirements
 
-The model is implemented in Tensorflow and Keras and uses several additional libraries. Specifically, we used:
+The model is implemented in PyTorch and uses several additional libraries. Specifically, we used:
 
 * `pytorch==1.0`
 * `python==3.6.8`
