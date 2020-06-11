@@ -15,10 +15,10 @@ import pickle
 import time
 import os
 import sys
-from scripts.audioread import audioread
-from scripts.normhamming import normhamming
-from scripts.plot_spectrum import *
-from scripts.sigproc import *
+from audioread import audioread
+from normhamming import normhamming
+from plot_spectrum import *
+from sigproc import *
 
 
 def get_power_spec(filename, fft_len, frame_shift):
